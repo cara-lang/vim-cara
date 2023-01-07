@@ -5,17 +5,21 @@ syntax keyword caraKeywords
   \ case
   \ of
   \ where
+  \ test
+  \ with
+  \ module
+  \ private
 
 syntax keyword caraTypes
   \ type
   \ alias
+  \ opaque
 
-syntax match caraNumber "\v-?<\d+>"
-syntax match caraNumber "\v-?<\d+\.\d+>"
-" TODO scientific notation
-" TODO 0x
-" TODO 0o
-" TODO 0b
+syntax match caraNumber "\v<-?\d+(_\d+)*>"
+syntax match caraNumber "\v<-?\d+(_\d+)*\.\d+(_\d+)*([eE]\d+)?>"
+syntax match caraNumber "\v<-?0b[01]+>"
+syntax match caraNumber "\v<-?0o[0-7]+>"
+syntax match caraNumber "\v<-?0x[0-7a-fA-F]+>"
 
 syntax match caraDelimiter ","
 syntax match caraBraces "[()[\]{}]"
