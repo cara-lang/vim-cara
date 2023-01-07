@@ -9,27 +9,31 @@ function! CaraIndent()
   let prepreNum = prevnonblank(v:lnum - 2)
   let prepre = getline(prepreNum)
 
-  if previous =~ " then\s*$"
+  if previous =~ " then\\s*$"
     return indent(previousNum) + &tabstop
   endif
 
-  if prepre =~ " then\s*$" && previous !~ " else\s*$"
+  if prepre =~ " then\\s*$" && previous !~ " else\\s*$"
     return indent(previousNum) - &tabstop
   endif
 
-  if previous =~ " else\s*$"
+  if previous =~ " else\\s*$"
     return indent(previousNum) + &tabstop
   endif
 
-  if previous =~ " of\s*$"
+  if previous =~ " of\\s*$"
     return indent(previousNum) + &tabstop
   endif
 
-  if previous =~ " where\s*$"
+  if previous =~ " ->\\s*$"
     return indent(previousNum) + &tabstop
   endif
 
-  if previous =~ " =\s*$"
+  if previous =~ " where\\s*$"
+    return indent(previousNum) + &tabstop
+  endif
+
+  if previous =~ " =\\s*$"
     return indent(previousNum) + &tabstop
   endif
 
