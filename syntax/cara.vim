@@ -9,6 +9,7 @@ syntax keyword caraKeywords
   \ with
   \ module
   \ private
+  \ extend
 
 syntax keyword caraTypes
   \ type
